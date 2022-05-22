@@ -79,6 +79,26 @@ class _NextBusPageState extends State<NextBusPage> {
               ),
             ),
           ),
+          // Card-3
+          Card(
+            child: InkWell(
+              onTap: () {
+                //debugPrint('Card tapped.');
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const KuzuhaKitayamaPage()));
+              },
+              child: const ListTile(
+                leading: Icon(
+                  Icons.directions_bus_filled,
+                  color: Colors.teal,
+                ),
+                title: Text('樟葉駅 → 北山中央'),
+                subtitle: Text('Kuzuha Station → Kitayama Chuo'),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -175,6 +195,57 @@ class _KitayamaNagaoPageState extends State<KitayamaNagaoPage> {
           const Text("20時 : 28  |  10"),
           const Text("21時 : 34"),
           const Text("22時 : ")
+        ],
+      ),
+    );
+  }
+}
+
+class KuzuhaKitayamaPage extends StatefulWidget {
+  const KuzuhaKitayamaPage({Key? key}) : super(key: key);
+
+  @override
+  _KuzuhaKitayamaPageState createState() => _KuzuhaKitayamaPageState();
+}
+
+class _KuzuhaKitayamaPageState extends State<KuzuhaKitayamaPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // backgroundColor: Colors.transparent,
+        // elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Text('樟葉駅 → 北山中央'),
+        //centerTitle: true,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: const Text("  - 北山中央行き -  "),
+          ),
+          const Text("06時 : 48"),
+          const Text("07時 : 05 25 42 51"),
+          const Text("08時 : 01 13 20 22 30 (36) 44 (49）"),
+          const Text("09時 : 01 12 24 34 54"),
+          const Text("10時 : 02 16 22 36 54"),
+          const Text("11時 : 02 14 22 36 54"),
+          const Text("12時 : 02 14 22 36 54"),
+          const Text("13時 : 02 14 22 36 54"),
+          const Text("14時 : 02 14 22 36 54"),
+          const Text("15時 : 02 14 22 36 54"),
+          const Text("16時 : 02 14 22 36 54"),
+          const Text("17時 : 02 14 28 38 58"),
+          const Text("18時 : 08 20 28 38 48 56"),
+          const Text("19時 : 08 18 21 33 43 48 56"),
+          const Text("20時 : 06 16 27 37 45 57"),
+          const Text("21時 : 07 17 25 35 45"),
+          const Text("22時 : 08 31 47"),
+          const Text("23時 : 08 22 44"),
+          const Text("24時 : 13 32"),
+          const Text("()は学休期のみ運行"),
         ],
       ),
     );
