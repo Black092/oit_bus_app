@@ -44,8 +44,10 @@ class _NextBusPageState extends State<NextBusPage> {
             child: InkWell(
               onTap: () {
                 //debugPrint('Card tapped.');
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const NagaoPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NagaoKitayamaPage()));
               },
               child: const ListTile(
                 leading: Icon(
@@ -57,20 +59,40 @@ class _NextBusPageState extends State<NextBusPage> {
               ),
             ),
           ),
+          // Card-2
+          Card(
+            child: InkWell(
+              onTap: () {
+                //debugPrint('Card tapped.');
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const KitayamaNagaoPage()));
+              },
+              child: const ListTile(
+                leading: Icon(
+                  Icons.directions_bus_filled,
+                  color: Colors.teal,
+                ),
+                title: Text('北山中央 → 長尾駅'),
+                subtitle: Text('Kitayama Chuo → Nagao Station'),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
 
-class NagaoPage extends StatefulWidget {
-  const NagaoPage({Key? key}) : super(key: key);
+class NagaoKitayamaPage extends StatefulWidget {
+  const NagaoKitayamaPage({Key? key}) : super(key: key);
 
   @override
-  _NagaoPageState createState() => _NagaoPageState();
+  _NagaoKitayamaPageState createState() => _NagaoKitayamaPageState();
 }
 
-class _NagaoPageState extends State<NagaoPage> {
+class _NagaoKitayamaPageState extends State<NagaoKitayamaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,6 +127,54 @@ class _NagaoPageState extends State<NagaoPage> {
           const Text("20時 : 01 30"),
           const Text("21時 : 07"),
           const Text("22時 : 02")
+        ],
+      ),
+    );
+  }
+}
+
+class KitayamaNagaoPage extends StatefulWidget {
+  const KitayamaNagaoPage({Key? key}) : super(key: key);
+
+  @override
+  _KitayamaNagaoPageState createState() => _KitayamaNagaoPageState();
+}
+
+class _KitayamaNagaoPageState extends State<KitayamaNagaoPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // backgroundColor: Colors.transparent,
+        // elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Text('北山中央 → 長尾駅'),
+        //centerTitle: true,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: const Text("  - 長尾駅行き  |  ノンストップバス -  "),
+          ),
+          const Text("06時 : 31 49"),
+          const Text("07時 : 08 27 41"),
+          const Text("08時 : 02 31  |  34 38"),
+          const Text("09時 : 00 15 45  |  04"),
+          const Text("10時 : 45  |  42"),
+          const Text("11時 : 45  |  12 42"),
+          const Text("12時 : 45  |  12 52"),
+          const Text("13時 : 45  |  03 27 38"),
+          const Text("14時 : 45  |  31"),
+          const Text("15時 : 45  |  19 29 43 59"),
+          const Text("16時 : 29 45  |  25 44"),
+          const Text("17時 : 27 54  |  10 14 40"),
+          const Text("18時 : 25 40 55  |  10"),
+          const Text("19時 : 10 24 54  |  "),
+          const Text("20時 : 28  |  10"),
+          const Text("21時 : 34"),
+          const Text("22時 : ")
         ],
       ),
     );
