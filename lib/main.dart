@@ -99,6 +99,26 @@ class _NextBusPageState extends State<NextBusPage> {
               ),
             ),
           ),
+          // Card-4
+          Card(
+            child: InkWell(
+              onTap: () {
+                //debugPrint('Card tapped.');
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const KitayamaKuzuhaPage()));
+              },
+              child: const ListTile(
+                leading: Icon(
+                  Icons.directions_bus_filled,
+                  color: Colors.teal,
+                ),
+                title: Text('北山中央 → 樟葉駅'),
+                subtitle: Text('Kitayama Chuo → Kuzuha Station'),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -246,6 +266,57 @@ class _KuzuhaKitayamaPageState extends State<KuzuhaKitayamaPage> {
           const Text("23時 : 08 22 44"),
           const Text("24時 : 13 32"),
           const Text("()は学休期のみ運行"),
+        ],
+      ),
+    );
+  }
+}
+
+class KitayamaKuzuhaPage extends StatefulWidget {
+  const KitayamaKuzuhaPage({Key? key}) : super(key: key);
+
+  @override
+  _KitayamaKuzuhaPageState createState() => _KitayamaKuzuhaPageState();
+}
+
+class _KitayamaKuzuhaPageState extends State<KitayamaKuzuhaPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // backgroundColor: Colors.transparent,
+        // elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Text('北山中央 → 樟葉駅'),
+        //centerTitle: true,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: const Text("  - 樟葉駅行き -  "),
+          ),
+          const Text("05時 : 33 51"),
+          const Text("06時 : 15 31 39 51"),
+          const Text("07時 : 03 15 27 42"),
+          const Text("08時 : 03 13 24 35 46"),
+          const Text("09時 : 05 22 45"),
+          const Text("10時 : 05 22 45"),
+          const Text("11時 : 05 22 45"),
+          const Text("12時 : 05 22 45"),
+          const Text("13時 : 05 22 45"),
+          const Text("14時 : 05 22 45"),
+          const Text("15時 : 05 22 45"),
+          const Text("16時 : 05 22 45 53"),
+          const Text("17時 : 01 07 17 27 37 44 56"),
+          const Text("18時 : 09 31 53"),
+          const Text("19時 : 11 26 41 56"),
+          const Text("20時 : 16 41"),
+          const Text("21時 : 06 35 55"),
+          const Text("22時 : 39"),
+          const Text("23時 : "),
+          const Text("24時 : "),
         ],
       ),
     );
